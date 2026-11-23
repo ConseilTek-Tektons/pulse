@@ -1,0 +1,31 @@
+{
+  "realm": "pulse",
+  "enabled": true,
+  "displayName": "Pulse local identity broker",
+  "registrationAllowed": false,
+  "loginWithEmailAllowed": true,
+  "clients": [
+    {
+      "clientId": "pulse-web",
+      "name": "Pulse Web",
+      "enabled": true,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "local-dev-secret",
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": false,
+      "redirectUris": ["http://localhost:3000/api/auth/callback/enterprise-sso"],
+      "webOrigins": ["http://localhost:3000"],
+      "protocol": "openid-connect",
+      "defaultClientScopes": ["web-origins", "acr", "roles", "profile", "email", "groups"]
+    }
+  ],
+  "groups": [
+    { "name": "pulse-owners" },
+    { "name": "pulse-admins" },
+    { "name": "pmo-leads" },
+    { "name": "project-managers" },
+    { "name": "pulse-contributors" },
+    { "name": "pulse-viewers" },
+    { "name": "internal-audit" }
+  ]
+}
